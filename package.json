@@ -1,0 +1,23 @@
+{
+  "name": "local-dues-form",
+  "version": "1.0.0",
+  "description": "Vue.js app for setting up local dues contributions with the Action Network.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsa504/local-dues-form.git"
+  },
+  "author": "Steve Price",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsa504/local-dues-form/issues"
+  },
+  "homepage": "https://github.com/dsa504/local-dues-form#readme",
+  "dependencies": {
+    "static-server": "^2.2.1",
+    "vue": "^2.5.17"
+  }
+}
