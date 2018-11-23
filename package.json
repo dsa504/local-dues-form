@@ -4,7 +4,8 @@
   "description": "Vue.js app for setting up local dues contributions with the Action Network.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "static-server"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/dsa504/local-dues-form#readme",
   "dependencies": {
     "static-server": "^2.2.1",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-material": "^1.0.0-beta-10.2"
   }
 }
