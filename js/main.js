@@ -36,10 +36,11 @@ const duesVm = new Vue({
         },
         contributions: [
             {
-                name: "chapter",
+                type: "Chapter Dues",
                 amount: 0,
             }
-        ]
+        ],
+        monthly: false,
     },
 });
 
