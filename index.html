@@ -2,19 +2,63 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
-        <link rel="stylesheet" href="/node_modules/vue-material/dist/vue-material.min.css">
-        <link rel="stylesheet" href="/node_modules/vue-material/dist/theme/default.css">
         <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
         <main id="app">
-            <md-app>
-                <md-card>
-                    <md-card-header>Pay yer local damn dues!</md-card-header>
-                </md-card>
-            </md-app>
+            <h2>DSA New Orleans Local Dues Donation</h2>
+            <p>
+                The chapter gets very little from national DSA in terms of money and resources.
+                We depend on our membership to help us pay our bills and build a better world for the many,
+                not just the few. Please make a monthly dues donation if you can.
+            </p>
+            
+            <div class="dues-estimator">
+                <h3>Don't know what to pay?</h3>
+                <div>
+                    <label>
+                        <span>Enter your monthly take-home (after taxes) income:</span>
+                        <input type="number" v-model="monthlyIncome">
+                    </label>
+                </div>
+                <div>
+                    <span v-text="suggestedDues"></span>
+                    <button 
+                        v-show="suggestedDues !== null"
+                        v-on:click="lineItems[0].amount = suggestedDues"
+                    >Yeah, I'll go with that!</button>
+                </div>
+                <div>
+                    <h3>Contributions</h3>
+                    <ul>
+                        <li v-for="l of lineItems">
+                            <div>
+                                <label>
+                                    <span>Select recipient</span>
+                                    <select v-bind:value="l.type">
+                                        <option v-for="a of presets.availableLineItems">{{a}}</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="number" v-model="l.amount">
+                            </div>
+                        </li>
+                    </ul>
+                    <div>
+                        <button></button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Unable to commit to monthly dues at this time? Just want to make a one-time donation? No problem.</h3>
+                    <label>
+                        <input type="checkbox">
+                        <span>Make this a one-time-only donation.</span>
+                    </label>
+                </div>
+            </div>
         </main>
         <!-- scripts -->
-        <script type="module" src="/js/main.js"></script>
+        <script type="module" src="/js/src/main.mjs"></script>
     </body>
 </html>

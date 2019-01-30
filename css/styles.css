@@ -4,3 +4,7 @@ main {
     flex-direction: column;
     flex-grow: 1;
 }
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
